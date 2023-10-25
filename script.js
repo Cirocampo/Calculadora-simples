@@ -14,9 +14,13 @@ function apresentar_valor(event) {
 // essa função faz o calculo que foi adicionado no input
 function calc() {
     let expressao = document.getElementById("tela").value;
-    try {
+    try {            
         var result = eval(expressao);
-        document.getElementById('tela').value = result
+        if(result != undefined){  
+            document.getElementById('tela').value = result;
+        } else {
+            document.getElementById('tela').value = '';
+        }
     } catch {
         console.log("deu errado")
     }
